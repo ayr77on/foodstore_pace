@@ -1,0 +1,8 @@
+nav .brand-logo{
+    float: left !important;
+    margin-left: 20px;
+    position: unset;
+}
+.nav-wrapper{
+    background-color: black;
+}
