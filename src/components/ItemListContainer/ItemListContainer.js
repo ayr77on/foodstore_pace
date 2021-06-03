@@ -1,9 +1,9 @@
-import './NavBar.css';
-import CartWidget from '../CartWidget/CartWidget';
+// import './NavBar.css';
+// import CartWidget from '../CartWidget/CartWidget';
 
-function NavBar () {
+function ItemListContainer () {
     return (
-        <nav >
+        <nav>
             <div className="nav-wrapper">
             <a className="brand-logo">FoodStore</a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -16,4 +16,4 @@ function NavBar () {
     );
   }
   
-export default NavBar;
+export default ItemListContainer;
