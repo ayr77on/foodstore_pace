@@ -2,14 +2,15 @@
 import 'materialize-css/dist/css/materialize.min.css'
 import './App.css';
 import NavBar  from './components/NavBar/NavBar';
+import ItemListContainer  from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <header className="App-header">
-      <p>Tienda de comida</p>
-      </header>
+      <div className="App-header">
+      <ItemListContainer texto="Tienda de comidas..."/>
+      </div>
     </div>
   );
 }
