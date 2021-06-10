@@ -8,7 +8,7 @@ const ItemList = ({items,i}) => {
         console.log('cargando...');
         setTimeout(function() {
           resolve(items);
-        }, 3000);
+        }, 2000);
       });
 
       useEffect(() => {
