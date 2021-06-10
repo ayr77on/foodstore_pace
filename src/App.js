@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <div className="App-header">
-      <ItemListContainer texto="Tienda de comidas..."/>
+      <ItemListContainer texto="Explora nuestras mejores recetas..."/>
       </div>
     </div>
   );
