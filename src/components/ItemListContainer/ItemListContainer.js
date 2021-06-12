@@ -1,7 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
-function ItemListContainer (props) {
+const ItemListContainer = (props) => {
     const onAdd = (items) => {
         console.log(`Agregaste ${items} items`);
     };
@@ -11,12 +13,30 @@ function ItemListContainer (props) {
         {id: 3 ,title: "Milanesa", price: 30,pictureUrl: "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2019/09/como-hacer-milanesa-sin-que-se-despegue-el-pan-molido.jpg" },
         {id: 4 ,title: "Empanada", price: 40,pictureUrl: "https://estaticos.miarevista.es/media/cache/1140x_thumb/uploads/images/recipe/5edd22d35bafe854db55f541/empanada-carne.jpg" }
     ];
+    const [itemList,setItemList] = useState([]);
+    const [load,setLoad] = useState("Cargando...");
+    const getProductList = new Promise((resolve, reject) => {
+        console.log('cargando...');
+        setTimeout(function() {
+          resolve(items);
+        }, 2000);
+      });
+
+      useEffect(() => {
+            getProductList.then(data => {
+                setItemList(data);
+                setLoad('');
+                console.log(data,"b");
+            });
+      },[]);
     
     return (
         <div>
-            {props.texto}
+            {/* {props.texto} */}
             {/* <ItemCount initial={1} stock={10} onAdd={onAdd} /> */}
-            <ItemList items={items} />
+            {load}
+            <ItemList items={itemList} />
+            <ItemDetailContainer/>
         </div>
     );
   }
