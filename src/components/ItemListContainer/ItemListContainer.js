@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+
 
 const ItemListContainer = (props) => {
     const onAdd = (items) => {
@@ -32,11 +32,11 @@ const ItemListContainer = (props) => {
     
     return (
         <div>
-            {/* {props.texto} */}
+            {props.texto}
             {/* <ItemCount initial={1} stock={10} onAdd={onAdd} /> */}
             {load}
             <ItemList items={itemList} />
-            <ItemDetailContainer/>
+            
         </div>
     );
   }
