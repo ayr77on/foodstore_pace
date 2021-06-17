@@ -2,7 +2,7 @@
 import 'materialize-css/dist/css/materialize.min.css'
 import './App.css';
 import NavBar  from './components/NavBar/NavBar';
-import { BrowserRouter ,Switch,Route,Link } from "react-router-dom";
+import { BrowserRouter ,Switch,Route,Link,useParams } from "react-router-dom";
 import ItemListContainer  from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
@@ -13,7 +13,12 @@ function App() {
         <NavBar/>
         <Switch>
         <div className="App-header">
-          <ItemListContainer texto="Explora nuestras mejores recetas..."/>
+          <Route exact path="/">
+            <ItemListContainer  texto="Explora nuestras mejores recetas..."/>
+          </Route>
+          <Route exact path="/categoria/:id">
+            <ItemListContainer  texto="Explora nuestras mejores recetas..."/>
+          </Route>
           <ItemDetailContainer/>
           <Route >
 
