@@ -4,6 +4,7 @@ import './App.css';
 import NavBar  from './components/NavBar/NavBar';
 import { BrowserRouter ,Switch,Route,Link,useParams } from "react-router-dom";
 import ItemListContainer  from './components/ItemListContainer/ItemListContainer';
+import items from './items';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
