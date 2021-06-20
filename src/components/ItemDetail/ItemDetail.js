@@ -1,7 +1,9 @@
 import React from 'react'
-
+import ItemCount from "../ItemCount/ItemCount";
 const ItemDetail = ({item}) => {
-    console.log("itemDetail",item)
+    const onAdd = (items) => {
+        console.log(`Agregaste ${items} items`);
+    };
     return (
         <div className="card col s3">
             <div className="card-image waves-effect waves-block waves-light">
@@ -16,7 +18,8 @@ const ItemDetail = ({item}) => {
                     <li>{ingredient}</li>
                 ))}
                 </ul>
-                <a class="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar</a>
+                {/* <a className="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar</a> */}
+                <ItemCount initial={1} stock={10} onAdd={onAdd} />
             </div>
             
         </div>

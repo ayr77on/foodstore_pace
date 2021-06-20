@@ -6,3 +6,6 @@ nav .brand-logo{
 .nav-wrapper{
     background-color: black;
 }
+.selected{
+    background-color: red;
+}
