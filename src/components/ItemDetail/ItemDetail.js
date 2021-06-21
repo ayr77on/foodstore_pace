@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 const ItemDetail = ({item}) => {
+    const [itemAdd,setItemAdd] = useState(0);
     const onAdd = (items) => {
-        console.log(`Agregaste ${items} items`);
+        setItemAdd(itemAdd+1);
     };
     return (
         <div className="card col s3">
@@ -18,8 +20,13 @@ const ItemDetail = ({item}) => {
                     <li>{ingredient}</li>
                 ))}
                 </ul>
+                {itemAdd >= 1 ? (
+                    <Link className="waves-effect waves-light btn" to="/cart">Terminar compra</Link>
+                ) : (
+                    <ItemCount initial={1} stock={10} onAdd={onAdd} />
+                )}
                 {/* <a className="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar</a> */}
-                <ItemCount initial={1} stock={10} onAdd={onAdd} />
+                
             </div>
             
         </div>
