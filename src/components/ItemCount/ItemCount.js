@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './ItemCount.css';
+import { CartContext } from '../../context/CartContext';
 
-const ItemCount = ({initial,stock,onAdd}) => {
+const ItemCount = ({initial,stock,onAdd,product}) => {
     const [items, setContador] = useState(initial);
-    const addItem = () => {
+    const { addItem } = useContext(CartContext);
+    const sumItem = () => {
         if(items < stock){
             setContador(items+1)
         }else{
@@ -22,9 +24,9 @@ const ItemCount = ({initial,stock,onAdd}) => {
             <div className="flex-container">
                 <input type="button" onClick={reduceItem} value="-" className="minus btn-floating btn-large waves-effect waves-light red"/>
                 <input type="number" name="quantity" value={items} title="Qty" className="quantity" />
-                <input type="button" onClick={addItem} value="+" className="plus btn-floating btn-large waves-effect waves-light red"/>
+                <input type="button" onClick={sumItem} value="+" className="plus btn-floating btn-large waves-effect waves-light red"/>
             </div>
-            <button onClick={() => onAdd(items)} className="waves-effect waves-light btn red">Agregar al carrito</button>  
+            <button onClick={() => addItem(product,items)} className="waves-effect waves-light btn red">Agregar al carrito</button>  
         </div>
     );
   }

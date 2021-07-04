@@ -23,7 +23,7 @@ const ItemDetail = ({item}) => {
                 {itemAdd >= 1 ? (
                     <Link className="waves-effect waves-light btn" to="/cart">Terminar compra</Link>
                 ) : (
-                    <ItemCount initial={1} stock={10} onAdd={onAdd} />
+                    <ItemCount initial={1} stock={10} onAdd={onAdd} product={item} />
                 )}
                 {/* <a className="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar</a> */}
                 
