@@ -1,11 +1,13 @@
 import React, {useContext} from 'react';
+import { NavLink } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
 
 const Cart = ()=> {
     const { cart,clear,removeItem } = useContext(CartContext);
+    var counter = Object.keys(cart).length;
     var total = 0;
-    console.log(cart,"a");
-    return (
+    if (counter > 0){
+        return (
             <ul className="collection">
                  {cart.map((cartItem,i) => {
                     total = total + (cartItem.item.price * cartItem.quantity)
@@ -20,10 +22,15 @@ const Cart = ()=> {
                 <div>
                     <h5 class="center-align">Total : ${total}</h5>
                     {total > 0 && (<button class="btn-large  waves-light red" onClick={() => clear()}>Limpiar carrito</button>)}
-                    
                 </div>        
             </ul>
-    );
+        );
+    }else{
+        return (
+            <NavLink className="btn-large  waves-light red" to="/">Agregar productos</NavLink>
+        );
+    }
+   
 }
 
 export default Cart;
