@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 
 const Cart = ()=> {
-    const { cart } = useContext(CartContext);
+    const { cart,clear,removeItem } = useContext(CartContext);
     var total = 0;
     console.log(cart,"a");
     return (
@@ -13,12 +13,14 @@ const Cart = ()=> {
                         <li key={i} className="collection-item avatar">
                             <img src={cartItem.item.pictureUrl} alt="" className="circle"/>
                             <span className="title textBlack">{cartItem.quantity} {cartItem.item.title} - ${cartItem.item.price * cartItem.quantity} </span>
-                            <button class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">cancel</i></button>
+                            <button onClick={() => removeItem(cartItem.item.id)} class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">cancel</i></button>
                         </li>
                     );
                 })}
                 <div>
-                    <h5 class="right-align">Total : ${total}</h5>
+                    <h5 class="center-align">Total : ${total}</h5>
+                    {total > 0 && (<button class="btn-large  waves-light red" onClick={() => clear()}>Limpiar carrito</button>)}
+                    
                 </div>        
             </ul>
     );

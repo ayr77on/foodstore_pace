@@ -14,6 +14,7 @@ const ItemDetail = ({item}) => {
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{item.title}</span>
                 <p className="grey-text text-darken-4">{item.description}</p>
+                <p className="grey-text text-darken-4">${item.price}</p>
                 <h5 className="grey-text text-darken-4">Ingredientes</h5>
                 <ul className="grey-text text-darken-4">
                 {item.ingredients.map((ingredient) => (

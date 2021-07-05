@@ -11,7 +11,7 @@ function NavBar () {
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><NavLink activeClassName="selected" to="/category/1" >Hamburguesas</NavLink></li>
                 <li><NavLink activeClassName="selected" to="/category/2" >Pizzas</NavLink></li>
-                <li><a href="">Productos</a></li>
+                <li><NavLink to="/" >Productos</NavLink></li>
                 <li><a href="">Ingresar</a></li>
                 <li><a><CartWidget/></a></li>
             </ul>

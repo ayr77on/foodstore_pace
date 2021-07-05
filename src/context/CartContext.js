@@ -6,21 +6,23 @@ function CartProvider({ defaultValue = [], children }) {
   
         
     const addItem = (product,quantity) => {
-        let item = {
+        var item = {
             item: product,
             quantity: quantity,
         };
-
-        // var result = items.filter(obj => {
-        //     return obj.item.id == product.id
-        //   })
-
-        
-        setCart([...cart, item]);
-        console.log(cart);
+        var result = cart.findIndex(function(object) {
+            return object.item.id == product.id;
+        });
+        if(result != -1){
+            let newCart = [...cart];
+            newCart[result]["quantity"] = newCart[result].quantity + quantity;
+            setCart(newCart);
+        }else{
+            setCart([...cart, item]);
+        }
     }
     const removeItem = id => {
-      return cart.find(x => x.id === id);
+        setCart(cart.filter(i => i.item.id !== id));
     }
     const clear = () => {
         setCart([]);

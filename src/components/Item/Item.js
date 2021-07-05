@@ -11,6 +11,7 @@ const Item = ({item,i}) => {
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{item.title}</span>
+                <p>${item.price}</p>
                 <NavLink className="waves-effect waves-light btn" to={`/item/${item.id}`} ><i className="material-icons right">search</i>Ver</NavLink>
             </div>
             
