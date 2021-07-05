@@ -26,7 +26,7 @@ const ItemCount = ({initial,stock,onAdd,product}) => {
                 <input type="number" name="quantity" value={items} title="Qty" className="quantity" />
                 <input type="button" onClick={sumItem} value="+" className="plus btn-floating btn-large waves-effect waves-light red"/>
             </div>
-            <button onClick={() => addItem(product,items)} className="waves-effect waves-light btn red">Agregar al carrito</button>  
+            <button onClick={() => {addItem(product,items); onAdd(items)}} className="waves-effect waves-light btn red">Agregar al carrito</button>  
         </div>
     );
   }
