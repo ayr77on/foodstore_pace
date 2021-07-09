@@ -6,12 +6,12 @@ const Item = ({item,i}) => {
         <div key={i} className="card col s3">
             <div className="card-image waves-effect waves-block waves-light">
             <NavLink  to={`/item/${item.id}`} >
-                <img className="activator" src={item.pictureUrl}/>
+                <img className="activator" src={item.imageId}/>
             </NavLink>
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{item.title}</span>
-                <p>${item.price}</p>
+                <p className="grey-text text-darken-4">${item.price}</p>
                 <NavLink className="waves-effect waves-light btn" to={`/item/${item.id}`} ><i className="material-icons right">search</i>Ver</NavLink>
             </div>
             

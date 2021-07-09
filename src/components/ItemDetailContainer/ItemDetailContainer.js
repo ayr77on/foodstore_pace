@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import items from '../../items';
+// import items from '../../items';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { getFirestore } from '../../factory/index.js';
 const ItemDetailContainer = () => {
   var { id } = useParams();
   const [itemIndividual,setItemDetail] = useState([]);
   const [loadItemDetailContainer,setLoadItemDetailContainer] = useState(false);
-  const getProductItem = new Promise((resolve, reject) => {
-      setTimeout(function() {
-        if(id){
-          var item = items.find(obj => {
-              return obj.id == id
-          })
-          resolve(item);
-        }
-      }, 2000);
-    });
-
     useEffect(() => {
-          getProductItem.then(dataItem => {
-              setItemDetail(dataItem);
+      const db = getFirestore();
+      const itemCollection = db.collection('items');
+      const item = itemCollection.doc(id);
+      item
+        .get()
+        .then(doc => {
+          if (!doc.exists) {
+            console.log('Item no encontrado');
+          }else{
+              console.log('Item encontrado',doc.data());
+              setItemDetail([{ id: doc.id, ...doc.data()}]);
               setLoadItemDetailContainer(true);
-          }).catch(error => {
-              console.log("errror");
-          });
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          setLoadItemDetailContainer(false);
+        });
     },[id]);
     return (
         <div className="containerList">

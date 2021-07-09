@@ -9,27 +9,19 @@ const ItemDetail = ({item}) => {
     return (
         <div className="card col s3">
             <div className="card-image waves-effect waves-block waves-light">
-                <img className="activator" src={item.pictureUrl}/>
+                <img className="activator" src={item[0].imageId}/>
             </div>
             <div className="card-content">
-                <span className="card-title activator grey-text text-darken-4">{item.title}</span>
-                <p className="grey-text text-darken-4">{item.description}</p>
-                <p className="grey-text text-darken-4">${item.price}</p>
+                <span className="card-title activator grey-text text-darken-4">{item[0].title}</span>
+                <p className="grey-text text-darken-4">{item[0].description}</p>
+                <p className="grey-text text-darken-4">${item[0].price}</p>
                 <h5 className="grey-text text-darken-4">Ingredientes</h5>
-                <ul className="grey-text text-darken-4">
-                {item.ingredients.map((ingredient) => (
-                    <li>{ingredient}</li>
-                ))}
-                </ul>
                 {itemAdd >= 1 ? (
                     <Link className="waves-effect waves-light btn" to="/cart">Terminar compra</Link>
                 ) : (
-                    <ItemCount initial={1} stock={10} onAdd={onAdd} product={item} />
-                )}
-                {/* <a className="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar</a> */}
-                
+                    <ItemCount initial={1} stock={10} onAdd={onAdd} product={item[0]} />
+                )}                
             </div>
-            
         </div>
     );
 }
