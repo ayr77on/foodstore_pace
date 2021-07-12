@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-// import items from '../../items';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { getFirestore } from '../../factory/index.js';
 const ItemDetailContainer = () => {

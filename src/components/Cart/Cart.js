@@ -24,6 +24,7 @@ const Cart = ()=> {
                     {total > 0 && (
                         <div>
                             <button class="btn-large  waves-light red" onClick={() => clear()}>Limpiar carrito</button>
+                            <NavLink class="btn-large  waves-light red" to="/checkout">Terminar Compra</NavLink>
                         </div>
                     )}
                 </div>        
