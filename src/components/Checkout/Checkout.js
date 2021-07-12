@@ -16,7 +16,6 @@ const Checkout = () => {
     });
     const [purchaseId, setPurchaseId] = useState("");
     const { cart,clear } = useContext(CartContext);
-    console.log(cart["item"]);
     var itemsCart = [];
     var total = 0;
     cart.map(function(cartItem) {
