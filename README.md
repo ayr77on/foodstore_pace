@@ -5,7 +5,7 @@ Es un carrito de compras donde se pueden elegir diferentes variedades de comidas
 Lo primero que se va a visualizar al correr el proyecto es un listado de productos de diferentes categorias. <br>
 Se pueden filtrar mediante las diferentes categorias que se visualizan en el menu de navegación. <br>
 Luego se puede ir a cualquier producto en particular para agregarlo al carrito de compras, luego de agregar, se puede seguir comprando o terminar la compra. <br>
-Al terminar la compra se completan datos de consumidor y asi mismo obtener un codigo de compra. <br>
+Al terminar la compra se completan datos de consumidor y asi mismo obtener un código de compra. <br>
 
 ## Navegación
 
@@ -27,6 +27,6 @@ Luego de clonar el repositorio ejecutar:
 - materialize-css: ![version](https://img.shields.io/badge/version-^1.0.0-blue)
 - web-vitals: ![version](https://img.shields.io/badge/version-^1.0.1-blue)
 
-### `npm start` => Para ejectuar el proyecto de manera local
+### `npm start` => Para ejecutar el proyecto de manera local
 
 
