@@ -6,7 +6,7 @@ import { getFirestore } from '../../factory/index.js';
 const ItemListContainer = (props) => {
     var { id } = useParams();
     const [itemList,setItemList] = useState([]);
-    const [load,setLoad] = useState("Cargando...");
+    const [messageItemListContainer,setMessageItemListContainer] = useState("Cargando...");
       useEffect(() => {
             const db = getFirestore();
             const itemCollection = id ? db.collection('items').where('categoryId', '==', id) : db.collection('items');
@@ -14,25 +14,22 @@ const ItemListContainer = (props) => {
               .get()
               .then(querySnapshot => {
                 if (querySnapshot.size === 0) {
-                  console.log('No resultados');
-                  setLoad(false);
+                  setMessageItemListContainer("No resultados");
                   return;
                 }
                 setItemList(querySnapshot.docs.map(doc => {
                   return { id: doc.id, ...doc.data() }
                 }));
-                console.log(querySnapshot.docs.map(doc => doc.data()))
-                setLoad(false);
+                setMessageItemListContainer("");
               })
               .catch(error => {
-                console.log(error);
-                setLoad(false);
+                setMessageItemListContainer("Hubo un error");
               });
       },[id]);
     
     return (
         <div className="container">
-            {load}
+            {messageItemListContainer}
             <ItemList items={itemList} />
         </div>
     );

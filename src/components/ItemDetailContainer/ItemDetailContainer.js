@@ -6,7 +6,7 @@ const ItemDetailContainer = () => {
   var { id } = useParams();
   const [itemIndividual,setItemDetail] = useState([]);
   const [loadItemDetailContainer,setLoadItemDetailContainer] = useState(false);
-  const [errorItemDetail,setErrorItemDetail] = useState("Cargando Item...");
+  const [messageItemDetail,setMessageItemDetail] = useState("Cargando Item...");
     useEffect(() => {
       const db = getFirestore();
       const itemCollection = db.collection('items');
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
         .then(doc => {
           if (!doc.exists) {
             setLoadItemDetailContainer(false);
-            setErrorItemDetail("Hubo un error al buscar el producto");
+            setMessageItemDetail("Hubo un error al buscar el producto");
           }else{
               setItemDetail([{ id: doc.id, ...doc.data()}]);
               setLoadItemDetailContainer(true);
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
         {loadItemDetailContainer ? (
             <ItemDetail item={itemIndividual}/>
           ) : (
-            <p>{errorItemDetail}</p>
+            <p>{messageItemDetail}</p>
           )}
             
         </div>
