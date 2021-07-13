@@ -35,7 +35,5 @@ const Cart = ()=> {
             <NavLink className="btn-large  waves-light red" to="/">Agregar productos</NavLink>
         );
     }
-   
 }
-
 export default Cart;

@@ -3,8 +3,6 @@ const CartContext = React.createContext([]);
 
 function CartProvider({ defaultValue = [], children }) {
     const [cart, setCart] = useState([]);
-  
-        
     const addItem = (product,quantity) => {
         var item = {
             item: product,
@@ -36,7 +34,6 @@ function CartProvider({ defaultValue = [], children }) {
       </CartContext.Provider>
     );
   }
-
 export{
     CartContext,
     CartProvider,
