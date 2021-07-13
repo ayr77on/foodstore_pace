@@ -9,7 +9,7 @@ const ItemDetail = ({item}) => {
     return (
         <div className="card col s3">
             <div className="card-image waves-effect waves-block waves-light">
-                <img className="activator" src={item[0].imageId}/>
+                <img alt="" className="activator" src={item[0].imageId}/>
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{item[0].title}</span>

@@ -23,11 +23,12 @@ const Cart = ()=> {
                     <h5 class="center-align">Total : ${total}</h5>
                     {total > 0 && (
                         <div>
+                            <NavLink class="btn-large  waves-light green" to="/">Seguir comprando</NavLink>
                             <button class="btn-large  waves-light red" onClick={() => clear()}>Limpiar carrito</button>
-                            <NavLink class="btn-large  waves-light red" to="/checkout">Terminar Compra</NavLink>
+                            <NavLink class="btn-large  waves-light blue" to="/checkout">Terminar Compra</NavLink>
                         </div>
                     )}
-                </div>        
+                </div>
             </ul>
         );
     }else{

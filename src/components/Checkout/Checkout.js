@@ -18,7 +18,7 @@ const Checkout = () => {
     const { cart,clear } = useContext(CartContext);
     var itemsCart = [];
     var total = 0;
-    cart.map(function(cartItem) {
+    cart.forEach(function(cartItem) {
         let itemTemp = {
             id : cartItem.item.id,
             title : cartItem.item.title,

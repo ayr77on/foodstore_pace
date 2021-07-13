@@ -9,9 +9,9 @@ function CartProvider({ defaultValue = [], children }) {
             quantity: quantity,
         };
         var result = cart.findIndex(function(object) {
-            return object.item.id == product.id;
+            return object.item.id === product.id;
         });
-        if(result != -1){
+        if(result !== -1){
             let newCart = [...cart];
             newCart[result]["quantity"] = newCart[result].quantity + quantity;
             setCart(newCart);

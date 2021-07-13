@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink,Link  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Item = ({item,i}) => {
+const Item = ({item}) => {
     return (
-        <div key={i} className="card col s3">
+        <div className="card col s3">
             <div className="card-image waves-effect waves-block waves-light">
             <NavLink  to={`/item/${item.id}`} >
-                <img className="activator" src={item.imageId}/>
+                <img alt="" className="activator" src={item.imageId}/>
             </NavLink>
             </div>
             <div className="card-content">
