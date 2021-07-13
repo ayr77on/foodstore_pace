@@ -9,7 +9,7 @@ Al terminar la compra se completan datos de consumidor y asi mismo obtener un co
 
 ## Navegación
 
-![Alt Text](https://github.com/ayr77on/foodstore_pace/blob/master/src/navigation.gif)
+![Alt Text](https://github.com/ayr77on/foodstore_pace/blob/master/src/navigation_final.gif)
 
 ## Scripts a ejecutar
 
